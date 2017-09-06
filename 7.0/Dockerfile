@@ -5,7 +5,7 @@ MAINTAINER Koong Kyungmi <kyungmi@ridi.com>
 RUN apt-get update && \
     
     # Common
-    apt-get install -y git wget software-properties-common python python-dev && \
+    apt-get install -y git wget software-properties-common python python-dev psmisc && \
 
     # For PHP zip extension
     apt-get install -y zlib1g-dev && \
