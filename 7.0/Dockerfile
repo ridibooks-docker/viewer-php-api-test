@@ -12,19 +12,19 @@ RUN apt-get update && \
 
     # Due to cassandra build error(cassandra-cpp-driver depends on libssl1.0.2 (>= 1.0.2d); however: Package libssl1.0.2 is not installed.)
     # Install Manually libssl1.0.2
-    wget http://ftp.br.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2l-2+deb9u1_amd64.deb && \
-    dpkg -i libssl1.0.2_1.0.2l-2+deb9u1_amd64.deb && \
+    # wget http://ftp.br.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2l-2+deb9u1_amd64.deb && \
+    # dpkg -i libssl1.0.2_1.0.2l-2+deb9u1_amd64.deb && \
     
     # For Cassandra php-driver
     apt-get install -y g++ make cmake libssl-dev libgmp-dev openssl libpcre3-dev && \
-    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/dependencies/libuv/v1.11.0/libuv_1.11.0-1_amd64.deb && \
-    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/dependencies/libuv/v1.11.0/libuv-dev_1.11.0-1_amd64.deb && \
-    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/cassandra/v2.7.0/cassandra-cpp-driver_2.7.0-1_amd64.deb && \
-    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/cassandra/v2.7.0/cassandra-cpp-driver-dev_2.7.0-1_amd64.deb && \
-    dpkg -i libuv_1.11.0-1_amd64.deb && \
-    dpkg -i libuv-dev_1.11.0-1_amd64.deb && \
-    dpkg -i cassandra-cpp-driver_2.7.0-1_amd64.deb && \
-    dpkg -i cassandra-cpp-driver-dev_2.7.0-1_amd64.deb && \
+    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/dependencies/libuv/v1.18.0/libuv_1.18.0-1_amd64.deb && \
+    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/dependencies/libuv/v1.18.0/libuv-dev_1.18.0-1_amd64.deb && \
+    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/cassandra/v2.8.1/cassandra-cpp-driver_2.8.1-1_amd64.deb && \
+    wget http://downloads.datastax.com/cpp-driver/ubuntu/16.04/cassandra/v2.8.1/cassandra-cpp-driver-dev_2.8.1-1_amd64.deb && \
+    dpkg -i libuv_1.18.0-1_amd64.deb && \
+    dpkg -i libuv-dev_1.18.0-1_amd64.deb && \
+    dpkg -i cassandra-cpp-driver_2.8.1-1_amd64.deb && \
+    dpkg -i cassandra-cpp-driver-dev_2.8.1-1_amd64.deb && \
     
     # For Couchbase PHP driver
     # wget http://packages.couchbase.com/ubuntu/couchbase.key && apt-key add couchbase.key && \
@@ -54,10 +54,6 @@ RUN pecl install xdebug && \
 
 # Install mysql driver
 RUN docker-php-ext-install pdo_mysql
-
-# Install Couchbase PHP driver
-# RUN pecl install couchbase-2.2.3 && \
-#     docker-php-ext-enable couchbase
 
 # Install datastax php-driver for Cassandra
 RUN pecl install cassandra && \
