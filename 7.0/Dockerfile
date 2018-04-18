@@ -12,8 +12,8 @@ RUN apt-get update && \
 
     # Due to cassandra build error(cassandra-cpp-driver depends on libssl1.0.2 (>= 1.0.2d); however: Package libssl1.0.2 is not installed.)
     # Install Manually libssl1.0.2
-    # wget http://ftp.br.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2o-1_amd64.deb && \
-    # dpkg -i libssl1.0.2_1.0.2o-1_amd64.deb && \
+    # wget http://ftp.br.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2l-2+deb9u3_amd64.deb && \
+    # dpkg -i libssl1.0.2_1.0.2l-2+deb9u3_amd64.deb && \
     
     # For Cassandra php-driver
     apt-get install -y g++ make cmake libssl-dev libgmp-dev openssl libpcre3-dev && \
