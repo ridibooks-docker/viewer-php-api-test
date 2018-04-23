@@ -5,6 +5,7 @@ Docker image for tests of viewer's php-api based on PHP 7.0
 ## Supported Docker Images
 
 * ridibooks/viewer-php-api-test:7.0 ([Dockerfile](https://github.com/ridibooks-docker/viewer-php-api-test/blob/master/7.0/Dockerfile)) - Docker image for tests of viewer's php-api based on PHP 7.0
+* ridibooks/viewer-php-api-test:7.1 ([Dockerfile](https://github.com/ridibooks-docker/viewer-php-api-test/blob/master/7.1/Dockerfile)) - Docker image for tests of viewer's php-api based on PHP 7.1
 
 ## Test with Gitlab Runner
 
